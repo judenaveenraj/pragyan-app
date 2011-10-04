@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:layout_marginTop="175px">
+    
+    <ImageView android:fadingEdgeLength="100px" 
+    android:fadingEdge="horizontal|vertical" 
+    android:id="@+id/imageView1" 
+    android:src="@drawable/splash_logo" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" android:layout_gravity="center"></ImageView>
+</LinearLayout>

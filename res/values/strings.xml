@@ -2,4 +2,6 @@
 <resources>
     <string name="hello">Hello World, NativeSampleActivity!</string>
     <string name="app_name">NativeSample</string>
+    <string name="event_day_title">Couple Dance</string>
+    <string name="event_day_description">For those couples looking to jazz up the dance floor, look no further...</string>
 </resources>

@@ -10,6 +10,11 @@
 	<item name="android:windowAnimationStyle">@style/Animations.SplashScreen</item>
 	</style>
     
+    <style name="Theme.OpenApp" parent="android:Theme">
+	<item name="android:windowIsFloating">false</item>
+	<item name="android:windowAnimationStyle">@style/Animations.SplashScreen</item>
+	</style>
+    
     <style name="Animations" parent="android:Animation" />
     	<style name="Animations.SplashScreen">
     	<item name="android:windowEnterAnimation">@anim/appear</item>

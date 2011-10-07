@@ -21,8 +21,7 @@ public final class R {
         public static final int title_border=0x7f020003;
     }
     public static final class id {
-        public static final int igeView1=0x7f070000;
-        public static final int imageView1=0x7f070001;
+        public static final int imageView1=0x7f070000;
     }
     public static final class layout {
         public static final int eventday=0x7f030000;
@@ -36,8 +35,9 @@ public final class R {
         public static final int hello=0x7f050000;
     }
     public static final class style {
-        public static final int Animations=0x7f060001;
-        public static final int Animations_SplashScreen=0x7f060002;
+        public static final int Animations=0x7f060002;
+        public static final int Animations_SplashScreen=0x7f060003;
+        public static final int Theme_OpenApp=0x7f060001;
         public static final int Theme_Transparent=0x7f060000;
     }
 }

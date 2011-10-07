@@ -32,7 +32,7 @@ public class SplashScreen extends Activity {
 	    		finish();
 	    		
 	    		Intent intent=new Intent();
-	    		intent.setClass(sPlashScreen, NativeSampleActivity.class);
+	    		intent.setClass(sPlashScreen, EventDayScreen.class);
 	    		startActivity(intent);
 	    		stop();
 	    		

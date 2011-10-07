@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
+        <activity android:name="EventDayScreen"></activity>
 
     </application>
 </manifest>

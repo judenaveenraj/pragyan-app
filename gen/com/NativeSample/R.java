@@ -25,8 +25,9 @@ public final class R {
     }
     public static final class layout {
         public static final int eventday=0x7f030000;
-        public static final int main=0x7f030001;
-        public static final int splash=0x7f030002;
+        public static final int eventday_land=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int splash=0x7f030003;
     }
     public static final class string {
         public static final int app_name=0x7f050001;

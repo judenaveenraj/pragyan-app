@@ -15,13 +15,19 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int dancecouple=0x7f020000;
-        public static final int icon=0x7f020001;
-        public static final int splash_logo=0x7f020002;
-        public static final int title_border=0x7f020003;
+        public static final int clock_bg=0x7f020000;
+        public static final int dancecouple=0x7f020001;
+        public static final int flipper_clock=0x7f020002;
+        public static final int icon=0x7f020003;
+        public static final int splash_logo=0x7f020004;
+        public static final int title_border=0x7f020005;
     }
     public static final class id {
+        public static final int days_count_view=0x7f070001;
+        public static final int hr_count_view=0x7f070002;
         public static final int imageView1=0x7f070000;
+        public static final int min_count_view=0x7f070003;
+        public static final int sec_count_view=0x7f070004;
     }
     public static final class layout {
         public static final int eventday=0x7f030000;
@@ -36,8 +42,9 @@ public final class R {
         public static final int hello=0x7f050000;
     }
     public static final class style {
-        public static final int Animations=0x7f060002;
-        public static final int Animations_SplashScreen=0x7f060003;
+        public static final int Animations=0x7f060003;
+        public static final int Animations_SplashScreen=0x7f060004;
+        public static final int Theme_Clock=0x7f060002;
         public static final int Theme_OpenApp=0x7f060001;
         public static final int Theme_Transparent=0x7f060000;
     }

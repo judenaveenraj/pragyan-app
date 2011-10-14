@@ -4,5 +4,38 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
+  
+  <ImageView android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_gravity="top"
+  android:src="@drawable/splash_logo"/>
+  
+  <LinearLayout 
+  android:orientation="horizontal"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:gravity="center_horizontal">
+  
+  <TextView 
+  android:id="@+id/days_count_view"
+  android:text="150"
+  style="@style/Theme.Clock">
+  </TextView>
+  <TextView 
+  android:id="@+id/hr_count_view"
+  android:text="24"
+  style="@style/Theme.Clock">
+  </TextView>
+  <TextView 
+  android:id="@+id/min_count_view"
+  android:text="59"
+  style="@style/Theme.Clock">
+  </TextView>
+  <TextView 
+  android:id="@+id/sec_count_view"
+  android:text="59"
+  style="@style/Theme.Clock">
+  </TextView>
+  </LinearLayout>
     
 </LinearLayout>

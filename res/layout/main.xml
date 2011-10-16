@@ -14,11 +14,13 @@
   android:orientation="horizontal"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
+  android:id="@+id/clock_lay"
   android:gravity="center_horizontal">
   
   <TextView 
-  android:id="@+id/days_count_view"
+  
   android:text="150"
+  android:id="@+id/days_count_view"
   style="@style/Theme.Clock">
   </TextView>
   <TextView 

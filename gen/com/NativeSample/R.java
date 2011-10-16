@@ -23,11 +23,12 @@ public final class R {
         public static final int title_border=0x7f020005;
     }
     public static final class id {
-        public static final int days_count_view=0x7f070001;
-        public static final int hr_count_view=0x7f070002;
+        public static final int clock_lay=0x7f070001;
+        public static final int days_count_view=0x7f070002;
+        public static final int hr_count_view=0x7f070003;
         public static final int imageView1=0x7f070000;
-        public static final int min_count_view=0x7f070003;
-        public static final int sec_count_view=0x7f070004;
+        public static final int min_count_view=0x7f070004;
+        public static final int sec_count_view=0x7f070005;
     }
     public static final class layout {
         public static final int eventday=0x7f030000;

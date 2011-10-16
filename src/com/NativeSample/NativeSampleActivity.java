@@ -8,7 +8,6 @@ import android.os.CountDownTimer;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class NativeSampleActivity extends Activity {
     Date now;
@@ -26,19 +25,15 @@ public class NativeSampleActivity extends Activity {
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(getLayoutInflater().inflate(R.layout.main,null));
     }
     
     public void onStart(){
     	super.onStart();
-        dtv=(TextView) this.findViewById(R.id.days_count_view);
-        htv=(TextView) this.findViewById(R.id.hr_count_view);
-        mtv=(TextView) this.findViewById(R.id.min_count_view);
-        stv=(TextView) this.findViewById(R.id.sec_count_view);
-		Log.v("damn", (String) dtv.getText());
-		Log.v("damn", (String) htv.getText());
-		Log.v("damn", (String) mtv.getText());
-		Log.v("damn", (String) stv.getText());
+    	dtv=(TextView) this.findViewById(R.id.days_count_view);
+    	htv=(TextView) this.findViewById(R.id.hr_count_view);
+    	mtv=(TextView) this.findViewById(R.id.min_count_view);
+    	stv=(TextView) this.findViewById(R.id.sec_count_view);
     	startCountDown();
     }
     
@@ -64,8 +59,6 @@ public class NativeSampleActivity extends Activity {
 
 	public class Prag extends CountDownTimer {
 		long days,rem,hours,rem2,mins,secs;
-		Thread mClockThread;
-		TextView dtv,htv,mtv,stv;
 		public Prag(long millisInFuture,long countDownInterval){
 			super(millisInFuture,countDownInterval);
 		}
@@ -73,21 +66,23 @@ public class NativeSampleActivity extends Activity {
 	//		tv.setText("Prayan is here !!!");
 		}
 		public void onTick(long millisUntilFinished){
+			millisUntilFinished=millisUntilFinished/1000;
 			days= millisUntilFinished/86400;
 			rem=millisUntilFinished%86400;
+			
 			hours=rem/3600;
 			rem2=rem%3600;
 			mins=rem2/60;
 			secs=rem2%60;
-
-			//setTexts();
+			setTexts();
+			Log.v("damn",String.valueOf(days));
 
 		}
 		public void setTexts(){
-			dtv.setText(String.valueOf(hours)+String.valueOf(mins)+String.valueOf(secs));
-			//htv.setText("AsdasdA");
-			//mtv.setText("AZsasd");
-			//stv.setText("SdsdDS");
+			dtv.setText(String.valueOf(days));
+			htv.setText(String.valueOf(hours));
+			mtv.setText(String.valueOf(mins));
+			stv.setText(String.valueOf(secs));
 		}
 		
 	}

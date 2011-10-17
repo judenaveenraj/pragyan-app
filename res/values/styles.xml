@@ -24,6 +24,14 @@
     <item name="android:background">@drawable/clock_bg</item>
     </style>
     
+    <style name="Theme.ClockLabel" parent="android:style/TextAppearance.Medium">
+ 	<item name="android:layout_width">fill_parent</item>
+	<item name="android:layout_height">fill_parent</item>
+	<item name="android:typeface">sans</item>
+ 	<item name="android:textSize">10sp</item>
+ 	<item name="android:layout_gravity">center_horizontal</item>
+ 	 </style>
+    
     <style name="Animations" parent="android:Animation" />
     	<style name="Animations.SplashScreen">
     	<item name="android:windowEnterAnimation">@anim/appear</item>

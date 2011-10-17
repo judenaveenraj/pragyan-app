@@ -75,7 +75,7 @@ public class NativeSampleActivity extends Activity {
 			mins=rem2/60;
 			secs=rem2%60;
 			setTexts();
-			Log.v("damn",String.valueOf(days));
+			//Log.v("damn",String.valueOf(days));
 
 		}
 		public void setTexts(){

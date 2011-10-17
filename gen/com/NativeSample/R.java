@@ -31,10 +31,11 @@ public final class R {
         public static final int sec_count_view=0x7f070005;
     }
     public static final class layout {
-        public static final int eventday=0x7f030000;
-        public static final int eventday_land=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int splash=0x7f030003;
+        public static final int days_label=0x7f030000;
+        public static final int eventday=0x7f030001;
+        public static final int eventday_land=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int splash=0x7f030004;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
@@ -43,9 +44,10 @@ public final class R {
         public static final int hello=0x7f050000;
     }
     public static final class style {
-        public static final int Animations=0x7f060003;
-        public static final int Animations_SplashScreen=0x7f060004;
+        public static final int Animations=0x7f060004;
+        public static final int Animations_SplashScreen=0x7f060005;
         public static final int Theme_Clock=0x7f060002;
+        public static final int Theme_ClockLabel=0x7f060003;
         public static final int Theme_OpenApp=0x7f060001;
         public static final int Theme_Transparent=0x7f060000;
     }

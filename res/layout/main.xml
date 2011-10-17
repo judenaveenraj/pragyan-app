@@ -17,27 +17,65 @@
   android:id="@+id/clock_lay"
   android:gravity="center_horizontal">
   
-  <TextView 
   
+  <FrameLayout
+  android:visibility="visible"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+  <TextView 
   android:text="150"
   android:id="@+id/days_count_view"
   style="@style/Theme.Clock">
   </TextView>
+  <TextView
+  android:text="DAYS"
+  style="@style/Theme.ClockLabel">
+  </TextView>
+  </FrameLayout>
+  <FrameLayout
+  android:visibility="visible"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
   <TextView 
   android:id="@+id/hr_count_view"
   android:text="24"
   style="@style/Theme.Clock">
   </TextView>
+  <TextView
+  android:text="MINS"
+  style="@style/Theme.ClockLabel">
+  </TextView>
+  </FrameLayout>
+
+  <FrameLayout
+  android:visibility="visible"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
   <TextView 
   android:id="@+id/min_count_view"
   android:text="59"
   style="@style/Theme.Clock">
+  </TextView>  
+  <TextView
+  android:text="MINS"
+  style="@style/Theme.ClockLabel">
   </TextView>
+  </FrameLayout>
+  
+  <FrameLayout
+  android:visibility="visible"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
   <TextView 
   android:id="@+id/sec_count_view"
   android:text="59"
   style="@style/Theme.Clock">
   </TextView>
+  <TextView
+  android:text="SECS"
+  style="@style/Theme.ClockLabel">
+  </TextView>
+  </FrameLayout>
   </LinearLayout>
     
 </LinearLayout>

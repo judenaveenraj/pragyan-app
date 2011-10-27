@@ -2,19 +2,28 @@ package com.NativeSample;
 
 import java.util.Date;
 
+import com.NativeSample.NativeSampleActivity.AnimListener;
+
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 @SuppressWarnings("deprecation")
-public class NativeSampleActivity extends Activity {
+public class NativeSampleActivity extends Activity implements android.view.View.OnClickListener{
     Date now;
 	CharSequence tdy;
 	Date dest;
@@ -43,12 +52,24 @@ public class NativeSampleActivity extends Activity {
     	startMenuAnim();
     }
     
+    public void setClickListeners(){
+    	ImageView top_btn=(ImageView)findViewById(R.id.top_btn);
+    	ImageView bottom_btn=(ImageView)findViewById(R.id.bottom_btn);
+    	ImageView right_btn=(ImageView)findViewById(R.id.pivotImg);
+    	ImageView left_btn=(ImageView)findViewById(R.id.left_btn);
+    	top_btn.setOnClickListener(this);
+    	bottom_btn.setOnClickListener(this);
+    	left_btn.setOnClickListener(this);
+    	right_btn.setOnClickListener(this);
+    }
+    
     public void startMenuAnim(){
     	Animation rotateMenu = AnimationUtils.loadAnimation(this, R.anim.main_rotate);
     	LayoutAnimationController rotController = new LayoutAnimationController(rotateMenu, 0);
     	FrameLayout menuWheelLayout = (FrameLayout)findViewById(R.id.menuLayout);
+    	AnimListener animlisten = new AnimListener();
+    	rotateMenu.setAnimationListener(animlisten);
     	menuWheelLayout.setLayoutAnimation(rotController);
-    	
     
     }
     
@@ -71,7 +92,7 @@ public class NativeSampleActivity extends Activity {
     
     
 
-
+    
 	public class Prag extends CountDownTimer {
 		long days,rem,hours,rem2,mins,secs;
 		public Prag(long millisInFuture,long countDownInterval){
@@ -101,4 +122,34 @@ public class NativeSampleActivity extends Activity {
 		}
 		
 	}
+	
+	
+	public class AnimListener implements AnimationListener{
+		public void onAnimationStart(Animation animation) {
+		}
+
+        public void onAnimationEnd(Animation animation) 
+        {
+        	Log.v("done","animation done");
+        	setClickListeners();
+
+        }
+
+        public void onAnimationRepeat(Animation animation) {
+        }
+	}
+	
+	
+	public void onClick(View v){
+		if(v.getId()==R.id.bottom_btn){
+			Log.d("ClickEvent","map clicked");
+		}
+		else{
+			Log.d("ClickEvent","Button clicked");
+		}
+		Intent inte = new Intent();
+		inte.setClass(this,ShowListViewer.class);
+		startActivity(inte);
+	}
+	
 }

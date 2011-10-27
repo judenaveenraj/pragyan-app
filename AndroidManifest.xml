@@ -30,6 +30,7 @@
         android:theme="@style/Theme.OpenApp"
         >
         </activity>
+        <activity android:name="ShowListViewer"></activity>
 
     </application>
 </manifest>

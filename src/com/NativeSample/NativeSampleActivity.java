@@ -7,8 +7,13 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
+@SuppressWarnings("deprecation")
 public class NativeSampleActivity extends Activity {
     Date now;
 	CharSequence tdy;
@@ -35,6 +40,16 @@ public class NativeSampleActivity extends Activity {
     	mtv=(TextView) this.findViewById(R.id.min_count_view);
     	stv=(TextView) this.findViewById(R.id.sec_count_view);
     	startCountDown();
+    	startMenuAnim();
+    }
+    
+    public void startMenuAnim(){
+    	Animation rotateMenu = AnimationUtils.loadAnimation(this, R.anim.main_rotate);
+    	LayoutAnimationController rotController = new LayoutAnimationController(rotateMenu, 0);
+    	FrameLayout menuWheelLayout = (FrameLayout)findViewById(R.id.menuLayout);
+    	menuWheelLayout.setLayoutAnimation(rotController);
+    	
+    
     }
     
     public void startCountDown(){

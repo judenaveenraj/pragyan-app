@@ -11,22 +11,30 @@ public final class R {
     public static final class anim {
         public static final int appear=0x7f040000;
         public static final int disappear=0x7f040001;
+        public static final int main_rotate=0x7f040002;
     }
     public static final class attr {
     }
     public static final class drawable {
-        public static final int clock_bg=0x7f020000;
-        public static final int dancecouple=0x7f020001;
-        public static final int flipper_clock=0x7f020002;
-        public static final int icon=0x7f020003;
-        public static final int splash_logo=0x7f020004;
-        public static final int title_border=0x7f020005;
+        public static final int ad_here=0x7f020000;
+        public static final int bottom_btn=0x7f020001;
+        public static final int clock_bg=0x7f020002;
+        public static final int dancecouple=0x7f020003;
+        public static final int flipper_clock=0x7f020004;
+        public static final int icon=0x7f020005;
+        public static final int left_btn=0x7f020006;
+        public static final int right_btn=0x7f020007;
+        public static final int splash_logo=0x7f020008;
+        public static final int title_border=0x7f020009;
+        public static final int top_btn=0x7f02000a;
     }
     public static final class id {
         public static final int clock_lay=0x7f070001;
         public static final int days_count_view=0x7f070002;
         public static final int hr_count_view=0x7f070003;
         public static final int imageView1=0x7f070000;
+        public static final int menuAbsLayout=0x7f070007;
+        public static final int menuLayout=0x7f070006;
         public static final int min_count_view=0x7f070004;
         public static final int sec_count_view=0x7f070005;
     }

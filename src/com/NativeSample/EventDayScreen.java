@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 
 public class EventDayScreen extends Activity {
 
-	private EventDayScreen eventdayscreen
+	private EventDayScreen eventdayscreen;
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

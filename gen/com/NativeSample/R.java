@@ -12,6 +12,8 @@ public final class R {
         public static final int appear=0x7f040000;
         public static final int disappear=0x7f040001;
         public static final int main_rotate=0x7f040002;
+        public static final int main_rotate_ctrl=0x7f040003;
+        public static final int main_rotate_init=0x7f040004;
     }
     public static final class attr {
     }

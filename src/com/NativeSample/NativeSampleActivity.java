@@ -11,15 +11,25 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.text.format.DateFormat;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.view.animation.RotateAnimation;
+import android.view.animation.Transformation;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 @SuppressWarnings("deprecation")
@@ -40,6 +50,59 @@ public class NativeSampleActivity extends Activity implements android.view.View.
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutInflater().inflate(R.layout.main,null));
+        
+        /*FrameLayout fl = (FrameLayout) findViewById(R.id.menuLayout);
+        AnimationSet set = new AnimationSet(true);
+        Animation animation = new AlphaAnimation(0.0f, 1.0f);
+        animation.setDuration(1000);
+        set.addAnimation(animation);
+        animation = new TranslateAnimation(
+            Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f,
+            Animation.RELATIVE_TO_SELF, -1.0f, Animation.RELATIVE_TO_SELF, 0.0f
+        );
+        
+        animation.setDuration(5000);
+        set.addAnimation(animation);
+        animation =new RotateAnimation(0.0f, 45.0f);
+        animation.setDuration(5000);
+        set.addAnimation(animation);
+        
+        set.setFillAfter(true);
+        LayoutAnimationController controller =
+            new LayoutAnimationController(set, 0.25f);
+;
+        final ViewGroup vg = (ViewGroup) findViewById(R.id.menuLayout);
+        final ImageView vg1 = (ImageView) findViewById(R.id.top_btn);
+        set.setAnimationListener(new AnimationListener() {
+			
+			public void onAnimationStart(Animation animation) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void onAnimationRepeat(Animation animation) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void onAnimationEnd(Animation animation) {
+				// TODO Auto-generated method stub
+				RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+						RelativeLayout.LayoutParams.WRAP_CONTENT,
+						RelativeLayout.LayoutParams.WRAP_CONTENT);
+				vg1.setLayoutParams(params);
+			}
+		});
+        vg.setLayoutAnimation(controller);
+        ImageView top_btn = (ImageView) findViewById(R.id.top_btn);
+    	top_btn.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				Log.v("Clicked","Top_btnn clicked");
+				
+			}
+		});*/
+
     }
     
     public void onStart(){
@@ -125,13 +188,47 @@ public class NativeSampleActivity extends Activity implements android.view.View.
 	
 	
 	public class AnimListener implements AnimationListener{
+		ViewGroup.LayoutParams top_params=null;
+		ViewGroup.LayoutParams bot_params=null;
+		ViewGroup.LayoutParams left_params=null;
+		ViewGroup.LayoutParams right_params=null;
+		
 		public void onAnimationStart(Animation animation) {
+			ImageView top_btn=(ImageView)findViewById(R.id.top_btn);
+        	ImageView bottom_btn=(ImageView)findViewById(R.id.bottom_btn);
+        	ImageView right_btn=(ImageView)findViewById(R.id.pivotImg);
+        	ImageView left_btn=(ImageView)findViewById(R.id.left_btn);
+        	top_params=top_btn.getLayoutParams();
+        	bot_params=bottom_btn.getLayoutParams();
+        	left_params=left_btn.getLayoutParams();
+        	right_params=right_btn.getLayoutParams();
 		}
 
         public void onAnimationEnd(Animation animation) 
         {
         	Log.v("done","animation done");
         	setClickListeners();
+        	ImageView top_btn=(ImageView)findViewById(R.id.top_btn);
+        	ImageView bottom_btn=(ImageView)findViewById(R.id.bottom_btn);
+        	ImageView right_btn=(ImageView)findViewById(R.id.pivotImg);
+        	ImageView left_btn=(ImageView)findViewById(R.id.left_btn);
+        	RelativeLayout.LayoutParams para=(android.widget.RelativeLayout.LayoutParams) top_btn.getLayoutParams();
+        	RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+        			para);
+        	RelativeLayout rl = (RelativeLayout) findViewById(R.id.menuAbsLayout);
+        	rl.setLayoutParams(new FrameLayout.LayoutParams(rl.getLayoutParams()));
+        	
+        	//FrameLayout fl=(FrameLayout) findViewById(R.id.menuLayout);
+        	//fl.setLayoutParams(new LinearLayout.LayoutParams(fl.getLayoutParams()));
+        	final Animation a = AnimationUtils.loadAnimation(NativeSampleActivity.this, R.anim.main_rotate_init);
+        	top_btn.startAnimation(a);
+        
+        	params=new RelativeLayout.LayoutParams(top_btn.getLayoutParams());
+        	params.leftMargin=0;
+        	top_btn.setLayoutParams(params);
+        	bottom_btn.setLayoutParams(bot_params);
+        	right_btn.setLayoutParams(right_params);
+        	left_btn.setLayoutParams(left_params);
 
         }
 
@@ -142,10 +239,16 @@ public class NativeSampleActivity extends Activity implements android.view.View.
 	
 	public void onClick(View v){
 		if(v.getId()==R.id.bottom_btn){
-			Log.d("ClickEvent","map clicked");
+			Log.d("ClickEvent","botoom map clicked");
 		}
-		else{
-			Log.d("ClickEvent","Button clicked");
+		if(v.getId()==R.id.top_btn){
+			Log.d("ClickEvent","top map clicked");
+		}
+		if(v.getId()==R.id.left_btn){
+			Log.d("ClickEvent","left ap clicked");
+		}
+		if(v.getId()==R.id.pivotImg){
+			Log.d("ClickEvent","right map clicked");
 		}
 		Intent inte = new Intent();
 		inte.setClass(this,ShowListViewer.class);

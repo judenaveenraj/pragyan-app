@@ -84,17 +84,29 @@ android:fillViewport="true">
   
   
   <FrameLayout
+  
   android:id="@+id/menuLayout"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
   android:layout_weight="1"
-  android:layout_gravity="center">
+  android:layout_gravity="center"
+  >
   	<RelativeLayout
+  	android:background="#FFCC66"
   	android:id="@+id/menuAbsLayout"
   	android:layout_width="fill_parent"
   	android:layout_height="wrap_content"
   	android:layout_gravity="center">
-  	<ImageView android:id="@+id/top_btn" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:src="@drawable/top_btn" android:scaleType="fitXY" android:layout_width="50dp" android:layout_x="110dp" android:layout_y="0dp" android:layout_height="120dp" android:layout_marginLeft="110dp"></ImageView>
+  	<ImageView android:id="@+id/top_btn" 
+  	android:layout_alignParentLeft="true" 
+  	android:layout_alignParentTop="true" 
+  	android:src="@drawable/top_btn" 
+  	android:scaleType="fitXY" 
+  	android:layout_width="50dp" 
+  	android:layout_x="110dp" 
+  	android:layout_y="0dp" 
+  	android:layout_height="120dp" 
+  	android:layout_marginLeft="110dp"></ImageView>
   	<ImageView android:id="@+id/bottom_btn" android:src="@drawable/bottom_btn" android:scaleType="fitXY" android:layout_width="50dp" android:layout_x="160dp" android:layout_y="120dp" android:layout_height="120dp" android:layout_alignTop="@+id/pivotImg" android:layout_marginTop="50dp" android:layout_alignLeft="@+id/pivotImg"></ImageView>
   	<ImageView android:id="@+id/pivotImg" android:src="@drawable/right_btn" android:layout_height="50dp" android:scaleType="fitXY" android:layout_width="120dp" android:layout_marginTop="70dp" android:layout_toRightOf="@+id/top_btn" android:layout_alignParentTop="true"></ImageView>
   	<ImageView android:src="@drawable/left_btn" android:layout_width="120dp" android:scaleType="fitXY" android:layout_height="50dp" android:id="@+id/left_btn" android:layout_below="@+id/top_btn" android:layout_alignRight="@+id/top_btn"></ImageView>

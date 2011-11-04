@@ -38,6 +38,5 @@
     	<item name="android:windowExitAnimation">@anim/disappear</item>
     	</style>
     	
-   
-    	
+
     </resources>

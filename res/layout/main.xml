@@ -92,7 +92,6 @@ android:fillViewport="true">
   android:layout_gravity="center"
   >
   	<RelativeLayout
-  	android:background="#FFCC66"
   	android:id="@+id/menuAbsLayout"
   	android:layout_width="fill_parent"
   	android:layout_height="wrap_content"
